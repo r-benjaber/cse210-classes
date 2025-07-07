@@ -1,0 +1,20 @@
+Class: Job
+    Attributes:
+        * Company       --> _company : string
+        * Job Title     --> _jobTitle : string
+        * Start Year    --> _startYear : int
+        * End Year      --> _endYear : int 
+
+    Behaviors:
+        * Displays the job information  --> Display() : void
+            (Format: "Job Title (Company) StartYear-EndYear", for example:
+             "Software Engineer (Microsoft) 2019-2022")
+
+Class: Resume
+    Attributes:
+        * Person's Name --> _name : string
+        * List of Jobs  --> _jobs : List<Job>
+
+    Behaviors:
+        * Displays Resume               --> Display() : void
+            (The person's name followed by displaying each job.)
