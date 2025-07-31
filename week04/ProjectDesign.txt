@@ -1,0 +1,118 @@
+///////////////////////////////////////// YOUTUBE VIDEOS /////////////////////////////////////////
+
+Class: Video
+    Responsibilities:
+        Stores and displays the information of a video, and the comments of the video
+
+    Attributes:
+        _author     --> string
+        _title      --> string
+        _length     --> int
+        _comments   --> List<Comment>
+
+    Behaviors:
+        AddComment()        --> Add a Comment object to the list _comments
+        DisplayInfo()       --> Display the information of the vido(author, name and length)
+        DisplayComments()   --> Display all the comments one by one
+        DisplayAll()        --> Display everething together
+
+-------------------------------------------------------------------------------------------------
+
+Class: Comment
+    Responsibilities: 
+        Stores and manages the author and content of a comment made in a video
+
+    Attributes:
+        _user       --> string
+        _text       --> string
+    
+    Behaviors:
+        GetUser()   --> Getter for the User attribute
+        GetText()   --> Getter for the text attribute
+
+-------------------------------------------------------------------------------------------------
+
+Program Description:
+    The program will create various instances of videos and for each video it will create various 
+instances of comments, when a comment is created it's added to the _comments list in the video 
+and at the end of each video the program displays the information and the comments using the 
+DisplayAll() method of the video object.
+
+
+
+
+//////////////////////////////////////// ONLINE ORDERING ////////////////////////////////////////
+
+Class: Address
+    Responsibilities:
+        Stores and manages the address name, the city, the state and the country of an address.
+
+    Attributes:
+        _address    --> string
+        _city       --> string
+        _state      --> string
+        _country    --> string
+    
+    Behaviors:
+        IsInUSA()           --> This is to check if the address is located in the United States
+        GetFullAddress()    --> This creates a string line that contains the full address
+
+-------------------------------------------------------------------------------------------------
+
+Class: Customer
+    Responsibilities:
+        Stores the name and the address of the Customer
+    
+    Attributes:
+        _name       --> string
+        _address    --> Address
+    
+    Behaviors:
+        GetName()           --> Getter for the name of the costumer
+        GetFullAddress()    --> Calls the GetFullAddress() method of the Address class
+        LivesInUSA()        --> Calls the IsInUSA() method of the Address class
+    
+-------------------------------------------------------------------------------------------------
+
+Class: Product
+    Responsibilities:
+        Stores and manages the information of each product bought in each order.
+
+    Attributes:
+        _name           --> string
+        _productId      --> string
+        _price          --> float
+        _amount         --> int
+    
+    Behaviors:
+        GetName()
+        GetProductId()
+        GetPrice()
+        GetAmount()     --> Getters for all the attributes that we will use in the Order Class
+        TotalCost()     --> Computes the total cost of a product
+
+-------------------------------------------------------------------------------------------------
+
+Class: Order
+    Responsibilities:
+        Stores and manages the information of the customer, and the bought products, computes the
+        total cost, and displays a bill or ticket.
+    
+    Attributes:
+        _customer       --> Customer
+        _products       --> List<Product>
+
+    Behaviors:
+        AddProduct()                --> Add a Product Instance to the _products list
+        GetTotalCost()              --> Computes the total cost of the order
+        DisplayPackingLabel()       --> Display the information of each product
+        DisplayShippingLabel()      --> Display the shipping information
+        DisplayTicket()             --> Display the order ticket
+
+-------------------------------------------------------------------------------------------------
+
+Program Description:
+    This program creates two instances of Address, Customers and Stores them in two instances of
+Order, then create instances of the class Product for each order, and for each Product it adds it
+to the product list of its order. At the end of each order the program displays the ticket that
+contains the packing and shipping information.
